@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: ramaayyappaexamplevotingapp 
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: ramaayyappaexamplevotingapp
+  template:
+    metadata:
+      labels:
+        app: ramaayyappaexamplevotingapp 
+    spec:
+      containers:
+        - name: ramaayyappaexamplevotingapp 
+          image: voteacr.azurecr.io/ramaayyappaexamplevotingapp
+          ports:
+          - containerPort: 80
